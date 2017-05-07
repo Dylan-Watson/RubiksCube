@@ -23,7 +23,7 @@ public class ArrayJava {
 		ArrayJava stuff = new ArrayJava();
 		out.print(stuff);
 		out.print("\n\n+===========================================================================+\n\n");
-		Util.UMove(stuff.cube);
+		Util.UPrime(stuff.cube);
 		out.print(stuff);
 		}
     

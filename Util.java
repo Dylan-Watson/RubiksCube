@@ -41,6 +41,35 @@ public class Util {
 		cube[4][2][2] = tempCube[4][0][2];
 	}
 	
+	public static void UPrime(ArrayJava.Colors[][][] cube){
+		ArrayJava.Colors[][][] tempCube = copyArray(cube);
+			
+		cube[0][0][0] = tempCube[1][0][0];
+		cube[0][0][1] = tempCube[1][0][1];
+		cube[0][0][2] = tempCube[1][0][2];
+		
+		cube[1][0][0] = tempCube[2][0][0];
+		cube[1][0][1] = tempCube[2][0][1];
+		cube[1][0][2] = tempCube[2][0][2];
+		
+		cube[2][0][0] = tempCube[3][0][0];
+		cube[2][0][1] = tempCube[3][0][1];
+		cube[2][0][2] = tempCube[3][0][2];
+		
+		cube[3][0][0] = tempCube[0][0][0];
+		cube[3][0][1] = tempCube[0][0][1];
+		cube[3][0][2] = tempCube[0][0][2];
+		
+		cube[4][0][0] = tempCube[4][0][2];
+		cube[4][0][1] = tempCube[4][1][2];
+		cube[4][0][2] = tempCube[4][2][2];
+		cube[4][1][0] = tempCube[4][0][1];
+		cube[4][1][2] = tempCube[4][2][1];
+		cube[4][2][0] = tempCube[4][0][0];
+		cube[4][2][1] = tempCube[4][1][0];
+		cube[4][2][2] = tempCube[4][2][0];
+	}
+	
 	private static ArrayJava.Colors[][][] copyArray(ArrayJava.Colors[][][] cube){
 		ArrayJava.Colors[][][] ret = new ArrayJava.Colors[6][3][3];
 		for(int thr = 0; thr < cube.length; thr++){
