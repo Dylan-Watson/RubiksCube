@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class ArrayJava {
     
-    public Colors[][][] cube;
+    public PolyStorage[][][] cube;
       
     public enum Colors{
     	white,
@@ -15,8 +15,8 @@ public class ArrayJava {
     }  
     	
     public ArrayJava() {
-    	cube = new Colors[6][3][3];
-		Util.resetArray(cube);
+    	cube = new PolyStorage[6][3][3];
+		Util.createArray(cube);
     }
     
     public static void main(String[] args) {
@@ -29,10 +29,10 @@ public class ArrayJava {
     
     public String toString(){
     	String output = "";
-    	for(Colors[][] a2 : cube){
-    		for(Colors[] a : a2){
-    			for(Colors c : a )
-    				output += c + " ";
+    	for(PolyStorage[][] a2 : cube){
+    		for(PolyStorage[] a : a2){
+    			for(PolyStorage c : a )
+    				output += c.getColor() + " ";
     			output += "\t";
     		}
     	output += "\n";

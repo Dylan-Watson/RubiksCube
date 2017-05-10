@@ -1,77 +1,87 @@
 
 public class Util {
 	
-	public static void resetArray(ArrayJava.Colors[][][] cube){
+	public static void resetArray(PolyStorage[][][] cube){
 		//Front = 0, Left = 1, Back = 2, Right = 3, Top = 4, Bottom = 5
 		//Front is white center
 		for(int thr = 0; thr < cube.length; thr++){
 			for(int r = 0; r < cube[thr].length; r++){
 				for(int c = 0; c < cube[thr][r].length; c++){
-					cube[thr][r][c] = getColorFromFaceValue(thr);
+					cube[thr][r][c].setColor(getColorFromFaceValue(thr));
 				}
 			}
 		}
 	}
 	
-	public static void UMove(ArrayJava.Colors[][][] cube){
-		ArrayJava.Colors[][][] tempCube = copyArray(cube);
-		cube[0][0][0] = tempCube[3][0][0];
-		cube[0][0][1] = tempCube[3][0][1];
-		cube[0][0][2] = tempCube[3][0][2];
-		
-		cube[1][0][0] = tempCube[0][0][0];
-		cube[1][0][1] = tempCube[0][0][1];
-		cube[1][0][2] = tempCube[0][0][2];
-		
-		cube[2][0][0] = tempCube[1][0][0];
-		cube[2][0][1] = tempCube[1][0][1];
-		cube[2][0][2] = tempCube[1][0][2];
-		
-		cube[3][0][0] = tempCube[2][0][0];
-		cube[3][0][1] = tempCube[2][0][1];
-		cube[3][0][2] = tempCube[2][0][2];
-		
-		cube[4][0][0] = tempCube[4][2][0];
-		cube[4][0][1] = tempCube[4][1][0];
-		cube[4][0][2] = tempCube[4][0][0];
-		cube[4][1][0] = tempCube[4][2][1];
-		cube[4][1][2] = tempCube[4][0][1];
-		cube[4][2][0] = tempCube[4][2][2];
-		cube[4][2][1] = tempCube[4][1][2];
-		cube[4][2][2] = tempCube[4][0][2];
+	public static void createArray(PolyStorage[][][] cube){
+		for(int thr = 0; thr < cube.length; thr++){
+			for(int r = 0; r < cube[thr].length; r++){
+				for(int c = 0; c < cube[thr][r].length; c++){
+					cube[thr][r][c] = new PolyStorage(getColorFromFaceValue(thr));
+				}
+			}
+		}
 	}
 	
-	public static void UPrime(ArrayJava.Colors[][][] cube){
-		ArrayJava.Colors[][][] tempCube = copyArray(cube);
+	public static void UMove(PolyStorage[][][] cube){
+		PolyStorage[][][] tempCube = copyArray(cube);
+		cube[0][0][0].setColor(tempCube[3][0][0].getColor());
+		cube[0][0][1].setColor(tempCube[3][0][1].getColor());
+		cube[0][0][2].setColor(tempCube[3][0][2].getColor());
+
+		cube[1][0][0].setColor(tempCube[0][0][0].getColor());
+		cube[1][0][1].setColor(tempCube[0][0][1].getColor());
+		cube[1][0][2].setColor(tempCube[0][0][2].getColor());
+
+		cube[2][0][0].setColor(tempCube[1][0][0].getColor());
+		cube[2][0][1].setColor(tempCube[1][0][1].getColor());
+		cube[2][0][2].setColor(tempCube[1][0][2].getColor());
+
+		cube[3][0][0].setColor(tempCube[2][0][0].getColor());
+		cube[3][0][1].setColor(tempCube[2][0][1].getColor());
+		cube[3][0][2].setColor(tempCube[2][0][2].getColor());
+
+		cube[4][0][0].setColor(tempCube[4][2][0].getColor());
+		cube[4][0][1].setColor(tempCube[4][1][0].getColor());
+		cube[4][0][2].setColor(tempCube[4][0][0].getColor());
+		cube[4][1][0].setColor(tempCube[4][2][1].getColor());
+		cube[4][1][2].setColor(tempCube[4][0][1].getColor());
+		cube[4][2][0].setColor(tempCube[4][2][2].getColor());
+		cube[4][2][1].setColor(tempCube[4][1][2].getColor());
+		cube[4][2][2].setColor(tempCube[4][0][2].getColor());
+	}
+	
+	public static void UPrime(PolyStorage[][][] cube){
+		PolyStorage[][][] tempCube = copyArray(cube);
 			
-		cube[0][0][0] = tempCube[1][0][0];
-		cube[0][0][1] = tempCube[1][0][1];
-		cube[0][0][2] = tempCube[1][0][2];
-		
-		cube[1][0][0] = tempCube[2][0][0];
-		cube[1][0][1] = tempCube[2][0][1];
-		cube[1][0][2] = tempCube[2][0][2];
-		
-		cube[2][0][0] = tempCube[3][0][0];
-		cube[2][0][1] = tempCube[3][0][1];
-		cube[2][0][2] = tempCube[3][0][2];
-		
-		cube[3][0][0] = tempCube[0][0][0];
-		cube[3][0][1] = tempCube[0][0][1];
-		cube[3][0][2] = tempCube[0][0][2];
-		
-		cube[4][0][0] = tempCube[4][0][2];
-		cube[4][0][1] = tempCube[4][1][2];
-		cube[4][0][2] = tempCube[4][2][2];
-		cube[4][1][0] = tempCube[4][0][1];
-		cube[4][1][2] = tempCube[4][2][1];
-		cube[4][2][0] = tempCube[4][0][0];
-		cube[4][2][1] = tempCube[4][1][0];
-		cube[4][2][2] = tempCube[4][2][0];
+		cube[0][0][0].setColor(tempCube[1][0][0].getColor());
+		cube[0][0][1].setColor(tempCube[1][0][1].getColor());
+		cube[0][0][2].setColor(tempCube[1][0][2].getColor());
+
+		cube[1][0][0].setColor(tempCube[2][0][0].getColor());
+		cube[1][0][1].setColor(tempCube[2][0][1].getColor());
+		cube[1][0][2].setColor(tempCube[2][0][2].getColor());
+
+		cube[2][0][0].setColor(tempCube[3][0][0].getColor());
+		cube[2][0][1].setColor(tempCube[3][0][1].getColor());
+		cube[2][0][2].setColor(tempCube[3][0][2].getColor());
+
+		cube[3][0][0].setColor(tempCube[0][0][0].getColor());
+		cube[3][0][1].setColor(tempCube[0][0][1].getColor());
+		cube[3][0][2].setColor(tempCube[0][0][2].getColor());
+
+		cube[4][0][0].setColor(tempCube[4][0][2].getColor());
+		cube[4][0][1].setColor(tempCube[4][1][2].getColor());
+		cube[4][0][2].setColor(tempCube[4][2][2].getColor());
+		cube[4][1][0].setColor(tempCube[4][0][1].getColor());
+		cube[4][1][2].setColor(tempCube[4][2][1].getColor());
+		cube[4][2][0].setColor(tempCube[4][0][0].getColor());
+		cube[4][2][1].setColor(tempCube[4][1][0].getColor());
+		cube[4][2][2].setColor(tempCube[4][2][0].getColor());
 	}
 	
-	private static ArrayJava.Colors[][][] copyArray(ArrayJava.Colors[][][] cube){
-		ArrayJava.Colors[][][] ret = new ArrayJava.Colors[6][3][3];
+	private static PolyStorage[][][] copyArray(PolyStorage[][][] cube){
+		PolyStorage[][][] ret = new PolyStorage[6][3][3];
 		for(int thr = 0; thr < cube.length; thr++){
 			for(int r = 0; r < cube[thr].length; r++){
 				for(int c = 0; c < cube[thr][r].length; c++){
