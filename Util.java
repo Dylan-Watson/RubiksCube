@@ -42,6 +42,26 @@ public class Util {
 		cube[5][2][1].setColor(tempCube[0][2][1].getColor());
 	}
 	
+	public static void MPrime(PolyStorage[][][] cube){
+		PolyStorage[][][] tempCube = copyArray(cube);
+		
+		cube[0][0][1].setColor(tempCube[5][0][1].getColor());
+		cube[0][1][1].setColor(tempCube[5][1][1].getColor());
+		cube[0][2][1].setColor(tempCube[5][2][1].getColor());
+		
+		cube[4][0][1].setColor(tempCube[0][0][1].getColor());
+		cube[4][1][1].setColor(tempCube[0][1][1].getColor());
+		cube[4][2][1].setColor(tempCube[0][2][1].getColor());
+		
+		cube[2][0][1].setColor(tempCube[4][2][1].getColor());
+		cube[2][1][1].setColor(tempCube[4][1][1].getColor());
+		cube[2][2][1].setColor(tempCube[4][0][1].getColor());
+		
+		cube[5][0][1].setColor(tempCube[2][2][1].getColor());
+		cube[5][1][1].setColor(tempCube[2][1][1].getColor());
+		cube[5][2][1].setColor(tempCube[2][0][1].getColor());
+	}
+	
 	public static void BMove(PolyStorage[][][] cube){
 		PolyStorage[][][] tempCube = copyArray(cube);
 		
