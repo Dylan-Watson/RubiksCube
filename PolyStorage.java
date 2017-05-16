@@ -25,4 +25,4 @@ public class PolyStorage{
 	public ArrayJava.Colors getColor(){ return color; }
 	
 	public void setColor(ArrayJava.Colors color){ this.color = color; }
-}
+}//hi
