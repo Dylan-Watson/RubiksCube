@@ -10,6 +10,11 @@ public class PolyStorage{
 		this.color = color;
 	}
 	
+	public PolyStorage(Polygon passed, ArrayJava.Colors color){
+		poly = passed;
+		this.color = color;
+	}
+	
 	public PolyStorage(ArrayJava.Colors color){
 		poly = null;
 		this.color = color;
