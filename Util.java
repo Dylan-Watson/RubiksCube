@@ -132,9 +132,6 @@ public class Util {
 		g.drawLine(backStartX,backStartY+(6*scale),backStartX+(8*scale),backStartY+(1*scale));
 		g.drawLine(backStartX+thirdLineX,backStartY-thirdLineY,backStartX+thirdLineX,backStartY+(9*scale)-thirdLineY);
 		g.drawLine(backStartX+(thirdLineX*2),backStartY-(thirdLineY*2),backStartX+(thirdLineX*2),backStartY+(9*scale)-(thirdLineY*2));
-		
-		int botStartX = xstart;
-		int botStartY = ystart + (20 * scale);
 
 	  	g.drawLine(botStartX,botStartY,botStartX-(8*scale),botStartY-(5*scale));
 		g.drawLine(botStartX,botStartY,botStartX+(8*scale),botStartY-(5*scale));
