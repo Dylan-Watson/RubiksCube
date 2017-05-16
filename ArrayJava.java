@@ -3,7 +3,6 @@ import java.awt.*;
 import java.applet.*;
 
 public class ArrayJava extends Applet{
-    
     public PolyStorage[][][] cube;
     
 	public int scale = 18;
@@ -32,7 +31,10 @@ public class ArrayJava extends Applet{
 		this.g = g;
     	Util.redrawCube(this.g, cube);
 		Util.drawLines(this.g);
-			
+		
+		Util.RPrime(cube);
+		Util.redrawCube(this.g, cube);
+		Util.drawLines(this.g);
     }
 	
 	public String toString(){

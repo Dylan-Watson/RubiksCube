@@ -423,9 +423,9 @@ public class Util {
 	
 	public static void RMove(PolyStorage[][][] cube){
 		PolyStorage[][][] tempCube = copyArray(cube);
-			
+		
 		cube[0][0][2].setColor(tempCube[5][0][2].getColor());	
-		cube[0][1][2].setColor(tempCube[5][1][2].getColor());			
+		cube[0][1][2].setColor(tempCube[5][1][2].getColor());	
 		cube[0][2][2].setColor(tempCube[5][2][2].getColor());
 
 		cube[4][0][2].setColor(tempCube[0][0][2].getColor());
@@ -543,7 +543,7 @@ public class Util {
 		for(int thr = 0; thr < cube.length; thr++){
 			for(int r = 0; r < cube[thr].length; r++){
 				for(int c = 0; c < cube[thr][r].length; c++){
-					ret[thr][r][c] = cube[thr][r][c];
+					ret[thr][r][c] = new PolyStorage(cube[thr][r][c].getPoly(), cube[thr][r][c].getColor());
 				}
 			}
 		}
