@@ -65,8 +65,7 @@ public class ArrayJava extends Applet implements KeyListener{
     
     	if(c=='/' || c=='?')
     		Util.randomizeCube(cube);
-    	
-    	if(c=='l')
+    	else if(c=='l')
     		Util.LMove(cube);
     	else if(c=='L')
     		Util.LPrime(cube);
