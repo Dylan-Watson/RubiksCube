@@ -34,6 +34,8 @@ public class ArrayJava extends Applet implements KeyListener{
     	Util.redrawCube(this.g, cube);
 		Util.drawLines(this.g);
 		Util.drawWin(this.g, cube);
+		g.setColor(Color.black);
+		g.drawString("IS SOLVED: ", 10,20);
     }
 	
 	public String toString(){

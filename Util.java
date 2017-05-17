@@ -82,10 +82,10 @@ public class Util {
 			for(int r = 0; r < cube[thr].length; r++)
 				for(int c = 0; c < cube[thr][r].length; c++)
 					if(color != cube[thr][r][c].getColor())
-						g.setColor(Color.white);
+						g.setColor(Color.red);
 		}
 		
-		g.fillRect(0,0,10,10);
+		g.fillRect(20,30,40,40);
 	}
 	
 	public static void drawLines(Graphics g){
