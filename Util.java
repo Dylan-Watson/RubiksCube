@@ -835,5 +835,54 @@ public class Util {
 
 	}
 	
+	public static void randomizeCube(PolyStorage[][][] cube)
+	{
+		Random ran = new Random();
+		int move;
+		
+		for(int i = 0; i<100; i++)
+		{
+			move = ran.nextInt(18);
+			
+			if(move == 0)
+				MMove(cube);
+			else if(move == 1)
+				MPrime(cube);
+			else if(move == 2)
+				BMove(cube);
+			else if(move == 3)
+				BPrime(cube);
+			else if(move == 4)
+				FMove(cube);
+			else if(move == 5)
+				FPrime(cube);
+			else if(move == 6)
+				DMove(cube);
+			else if(move == 7)
+				DPrime(cube);
+			else if(move == 8)
+				UMove(cube);
+			else if(move == 9)
+				UPrime(cube);
+			else if(move == 10)
+				RMove(cube);
+			else if(move == 11)
+				RPrime(cube);
+			else if(move == 12)
+				LMove(cube);
+			else if(move == 13)
+				LPrime(cube);
+			else if(move == 14)
+				SMove(cube);
+			else if(move == 15)
+				SPrime(cube);
+			else if(move == 16)
+				EMove(cube);
+			else if(move == 17)
+				EPrime(cube);
+				
+				
+		}
+	}
 	
 }

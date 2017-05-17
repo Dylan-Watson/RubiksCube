@@ -60,6 +60,9 @@ public class ArrayJava extends Applet implements KeyListener{
     public void keyReleased( KeyEvent e ){ }
     public void keyTyped( KeyEvent e ){
     	char c = e.getKeyChar();
+    
+    	if(c=='/' || c=='?')
+    		Util.randomizeCube(cube);
     	
     	if(c=='l')
     		Util.LMove(cube);
