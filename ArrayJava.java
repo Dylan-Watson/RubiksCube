@@ -89,10 +89,14 @@ public class ArrayJava extends Applet implements KeyListener{
     		Util.MMove(cube);
     	else if(c=='M')	
     		Util.MPrime(cube);
- //   	else if(c=='e')	
- //  		Util.EMove(cube);
- //   	else if(c=='E')	
- //  		Util.EPrime(cube);
+    	else if(c=='s')	
+			Util.SMove(cube);
+    	else if(c=='S')	
+			Util.SPrime(cube);
+    	else if(c=='e')	
+			Util.EMove(cube);
+    	else if(c=='E')	
+			Util.EPrime(cube);
     	
     	repaint();
 		e.consume();		
