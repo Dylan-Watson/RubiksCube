@@ -834,8 +834,7 @@ public class Util {
 
 	}
 	
-	public static void randomizeCube(PolyStorage[][][] cube)
-	{
+	public static void randomizeCube(PolyStorage[][][] cube){
 		Random ran = new Random();
 		int move;
 		
