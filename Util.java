@@ -444,9 +444,9 @@ public class Util {
 		cube[4][1][2].setColor(tempCube[2][1][0].getColor());
 		cube[4][2][2].setColor(tempCube[2][0][0].getColor());
 
-		cube[2][2][0].setColor(tempCube[4][0][2].getColor());
-		cube[2][1][0].setColor(tempCube[4][1][2].getColor());
-		cube[2][0][0].setColor(tempCube[4][2][2].getColor());
+		cube[2][2][0].setColor(tempCube[5][2][2].getColor());
+		cube[2][1][0].setColor(tempCube[5][1][2].getColor());
+		cube[2][0][0].setColor(tempCube[5][0][2].getColor());
 		
 		cube[5][2][2].setColor(tempCube[0][2][2].getColor());
 		cube[5][1][2].setColor(tempCube[0][1][2].getColor());
