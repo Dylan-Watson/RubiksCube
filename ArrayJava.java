@@ -26,6 +26,7 @@ public class ArrayJava extends Applet implements KeyListener{
     public void start(){
 		cube = new PolyStorage[6][3][3];
 		Util.createArray(cube);
+		addKeyListener( this );
     }
     
     public void paint(Graphics g){
@@ -33,11 +34,10 @@ public class ArrayJava extends Applet implements KeyListener{
     	Util.redrawCube(this.g, cube);
 		Util.drawLines(this.g);
 		
-//		Util.RMove(cube);
 		Util.redrawCube(this.g, cube);
 		Util.drawLines(this.g);
 		
-		addKeyListener( this );
+		
     }
 	
 	public String toString(){
@@ -54,13 +54,48 @@ public class ArrayJava extends Applet implements KeyListener{
     }
     
     
-    
-    public void keyPressed( KeyEvent e ){ }
+ //   boolean shActive = false; VK_SHIFT 
+    public void keyPressed( KeyEvent e ){
+    	 }
     public void keyReleased( KeyEvent e ){ }
     public void keyTyped( KeyEvent e ){
-    
-    	System.out.println("test");
+    	char c = e.getKeyChar();
     	
+    	if(c=='l')
+    		Util.LMove(cube);
+    	else if(c=='L')
+    		Util.LPrime(cube);
+    	else if(c=='r')	
+    		Util.RMove(cube);
+    	else if(c=='R')	
+    		Util.RPrime(cube);
+    	else if(c=='u')	
+    		Util.UMove(cube);
+    	else if(c=='U')	
+    		Util.UPrime(cube);
+    	else if(c=='d')	
+    		Util.DMove(cube);
+    	else if(c=='D')	
+    		Util.DPrime(cube);
+    	else if(c=='f')	
+    		Util.FMove(cube);
+    	else if(c=='F')	
+    		Util.FPrime(cube);
+    	else if(c=='b')	
+    		Util.BMove(cube);
+    	else if(c=='B')	
+    		Util.BPrime(cube);
+    	else if(c=='m')	
+    		Util.MMove(cube);
+    	else if(c=='M')	
+    		Util.MPrime(cube);
+ //   	else if(c=='e')	
+ //  		Util.EMove(cube);
+ //   	else if(c=='E')	
+ //  		Util.EPrime(cube);
+    	
+    	repaint();
+//e.consume()		??
     }
    	
 }
