@@ -71,8 +71,7 @@ public class Util {
 		return null;
 	}
 	
-	public static void drawWin(Graphics g, PolyStorage[][][] cube)
-	{
+	public static void drawWin(Graphics g, PolyStorage[][][] cube){
 		g.setColor(Color.green);
 		
 		for(int thr = 0; thr < cube.length; thr++)
@@ -538,7 +537,7 @@ public class Util {
 		cube[1][2][2].setColor(tempCube[1][2][0].getColor());
 	}
 	
-		public static void SMove(PolyStorage[][][] cube){
+	public static void SMove(PolyStorage[][][] cube){
 		PolyStorage[][][] tempCube = copyArray(cube);
 		
 		cube[1][0][1].setColor(tempCube[5][1][0].getColor());
