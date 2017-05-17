@@ -33,6 +33,7 @@ public class ArrayJava extends Applet implements KeyListener{
 		this.g = g;
     	Util.redrawCube(this.g, cube);
 		Util.drawLines(this.g);
+		Util.drawWin(this.g, cube);
     }
 	
 	public String toString(){
@@ -94,7 +95,7 @@ public class ArrayJava extends Applet implements KeyListener{
  //  		Util.EPrime(cube);
     	
     	repaint();
-		e.consume();
+		e.consume();		
     }
    	
 }

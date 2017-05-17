@@ -71,6 +71,23 @@ public class Util {
 		return null;
 	}
 	
+	public static void drawWin(Graphics g, PolyStorage[][][] cube)
+	{
+		g.setColor(Color.green);
+		
+		for(int thr = 0; thr < cube.length; thr++)
+		{
+			ArrayJava.Colors color = cube[thr][0][0].getColor();
+			
+			for(int r = 0; r < cube[thr].length; r++)
+				for(int c = 0; c < cube[thr][r].length; c++)
+					if(color != cube[thr][r][c].getColor())
+						g.setColor(Color.white);
+		}
+		
+		g.fillRect(0,0,10,10);
+	}
+	
 	public static void drawLines(Graphics g){
 		g.setColor(Color.black);
 		
