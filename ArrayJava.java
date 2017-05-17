@@ -33,11 +33,6 @@ public class ArrayJava extends Applet implements KeyListener{
 		this.g = g;
     	Util.redrawCube(this.g, cube);
 		Util.drawLines(this.g);
-		
-		Util.redrawCube(this.g, cube);
-		Util.drawLines(this.g);
-		
-		
     }
 	
 	public String toString(){
@@ -56,7 +51,11 @@ public class ArrayJava extends Applet implements KeyListener{
     
  //   boolean shActive = false; VK_SHIFT 
     public void keyPressed( KeyEvent e ){
-    	 }
+    	if(e.getKeyCode() == 8)
+    		Util.resetArray(cube);
+    	repaint();
+    	e.consume();
+    }
     public void keyReleased( KeyEvent e ){ }
     public void keyTyped( KeyEvent e ){
     	char c = e.getKeyChar();
@@ -95,7 +94,7 @@ public class ArrayJava extends Applet implements KeyListener{
  //  		Util.EPrime(cube);
     	
     	repaint();
-//e.consume()		??
+		e.consume();
     }
    	
 }
